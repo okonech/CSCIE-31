@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>API Tester for Decks</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript" src="/staticJS/apiTest.js"></script>
+</head>
+<body>
+<!-- Api test heavily based on Mike's section demo -->
+<form id = "decksCrudActions" method="get" action="#">
+    <textarea id="decksJsonData" name="decksJsonData" cols="150" rows="30"></textarea>
+    <p>
+        <button id="listDecks">List Decks</button>
+    </p>
+    <hr />
+    <h3>Create or Update a Deck</h3>
+    <p>
+        <label for="deckID">Deck ID (Leave blank if creating)</label>
+        <input type="text" id="deckID" name="deckID" value="" />
+        <br />
+        <label for="deckName">Deck Name</label>
+        <input type="text" id="deckName" name="deckName" value="" />
+        <br/>
+        <label for="deckCommander">Commander of Deck</label>
+        <input type="text" id="deckCommander" name="deckCommander" value="" />
+        <br/>
+        <label for="deckOwner">Deck Owner</label>
+        <input type="text" id="deckOwner" name="deckOwner" value="" />
+        <br/>
+        <label for="deckOwnerID">Deck Owner ID (Owner's _id)</label>
+        <input type="text" id="deckOwnerID" name="deckOwnerID" value="" />
+        <br/>
+        <button id="createDeckButton">Create new Deck</button>
+        <button id="updateDeckButton">Update Existing Deck</button>
+    </p>
+    <hr />
+    <h3>Read a Deck</h3>
+    <p>
+        <label for="readDeckID">Deck ID to Read: </label>
+        <input type="text" id="readDeckID" name="readDeckID" value="" />
+        <button id="readDeckButton">Read a Deck</button>
+    </p>
+    <hr />
+    <h3>Delete a Deck</h3>
+    <p>
+        <label for="deleteDeckID">Deck ID to Delete: </label>
+        <input type="text" id="deleteDeckID" name="deleteDeckID" value="" />
+        <button id="deleteDeckButton">Delete a Deck</button>
+    </p>
+</form>
+</body>
+</html>

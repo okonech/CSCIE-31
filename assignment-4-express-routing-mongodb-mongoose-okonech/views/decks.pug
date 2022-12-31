@@ -1,0 +1,14 @@
+extends layout
+
+block content
+    ul
+        if decks
+            p Existing decks for all users (Click link to edit):
+            ul
+                each deck in decks
+                    li
+                        a(href='/decks/' + deck.id) #{deck.name} by #{deck.owner}
+                        br
+                        | Commander: #{deck.commander}
+                        br
+                        br

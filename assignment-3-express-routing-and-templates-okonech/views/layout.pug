@@ -1,0 +1,9 @@
+doctype html
+html
+  head
+    title= title
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    if loginUser
+      h1 Welcome, #{loginUser}
+  body
+    block content

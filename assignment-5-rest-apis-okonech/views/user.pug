@@ -1,0 +1,28 @@
+extends layout
+
+block content
+    p EDH Decks and new Deck Entry for User: #{user.name}
+    p User account created on #{createdDate}
+    // register new deck form
+    form(method='POST' action='/decks/create')
+        div.form-group
+            label(for='name') Deck Name:
+            input#name.form-control(type='text', placeholder='Shimmer Zur' name='name')
+        div.form-group
+            label(for='commander') Commander:
+            input#commander.form-control(type='text', placeholder='Zur, the Enchanter' name='commander')
+        input(type="hidden" name="owner" value=user.name)
+        input(type="hidden" name="ownerID" value=user._id)
+        button.btn.btn-primary(type='submit') Create New Deck
+
+    if decks
+        p Existing decks (Click link to edit):
+        ul
+            each deck in decks
+                li
+                    a(href='/decks/'+deck.id) #{deck.name} by #{deck.owner}
+                    br
+                    | Commander: #{deck.commander}
+                    br
+                    br
+

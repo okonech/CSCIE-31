@@ -1,0 +1,22 @@
+extends layout
+
+block content
+    h2 Edit Deck
+    br
+    p Deck Creator: #{deck.owner}
+    p Deck created on #{deck.dateCreated}
+    // update deck form
+    form(method='POST' action='/decks/update/'+deck.id)
+        div.form-group
+            label(for='name') Deck Name:
+            input#name.form-control(type='text', name='name', value=deck.name)
+        div.form-group
+            label(for='commander') Commander:
+            input#commander.form-control(type='text', name='commander', value=deck.commander)
+        input(type="hidden" name="owner" value=deck.owner)
+        button.btn.btn-primary(type='submit') Update Deck
+    h2 Delete Deck
+    // delete deck form
+    form(method='DELETE' action='/decks/delete/'+deck.id)
+        button.btn.delete(type='submit') Delete Deck
+

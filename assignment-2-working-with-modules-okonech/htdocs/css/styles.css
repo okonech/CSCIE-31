@@ -1,0 +1,12 @@
+#DragBox{
+    width: 150px;
+    height: 25px;
+    background-color: red;
+    color: white;
+}
+
+#drag-me::before {
+    content: "#" attr(id);
+    font-weight: bold;
+}
+

@@ -1,0 +1,14 @@
+extends layout
+
+block content
+  h1= title
+  p
+    form(action='/users/create' method='post')
+      label(for='user') Username:
+      input#user(type='text', placeholder='User name' name='user' value="" size="50")
+      br
+      input#subBtn(type="submit" name="submit" value ="Login as user")
+
+
+
+

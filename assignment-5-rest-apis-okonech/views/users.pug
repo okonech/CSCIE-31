@@ -1,0 +1,9 @@
+extends layout
+
+block content
+    ul
+        if users
+            p List of All Users
+            each user in users
+                li= ""
+                    a(href='/users/'+user._id) #{user.name}

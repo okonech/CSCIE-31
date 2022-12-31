@@ -1,0 +1,24 @@
+extends layout
+
+block content
+    a(href='/users/') Go to list of users
+    p Phones and new Phone Entry for User: #{viewUser}
+    // register new phone form
+    form(method='GET' action='/users/' + viewUser)
+        div.form-group
+            label(for='model') Phone Model:
+            input#model.form-control(type='text', placeholder='Samsung' name='model')
+        div.form-group
+            label(for='capacity') Capacity (in GB):
+            input#capacity.form-control(type='number', placeholder='64' name='capacity')
+        div.form-group
+            label(for='color') Color:
+            input#color.form-control(type='text', placeholder='Black' name='color')
+        button.btn.btn-primary(type='submit') Add New Phone
+
+    if viewPhones
+        p Existing phones:
+        ul
+            each val in viewPhones
+                li= "Model: "+ val[0] + " Capacity: " + val[1] + " Color: " + val[2]
+

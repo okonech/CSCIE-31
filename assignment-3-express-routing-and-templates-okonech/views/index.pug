@@ -1,0 +1,14 @@
+extends layout
+
+block content
+  h1= title
+  p Assignment 3
+    form(method='GET' action='/users/')
+      div.form-group
+        label(for='user') Username:
+        input#user.form-control(type='text', placeholder='User name' name='user')
+      button.btn.btn-primary(type='submit') Login as User
+
+
+
+
